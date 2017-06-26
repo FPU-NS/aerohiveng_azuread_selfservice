@@ -23,7 +23,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
-    "authorization: Bearer $guesttoken",
+    "authorization: Bearer $accesstoken",
     "cache-control: no-cache",
     "x-ah-api-client-id: $clientid",
     "x-ah-api-client-redirect-uri: $redirecturi",
@@ -55,22 +55,27 @@ username:
 <?php
   echo $userName;
 ?>
-<p>
+<br>
+mobile: 
+<?php
+  echo $phone;
+?>
+<br>
 email: 
 <?php
   echo $email;
 ?>
-<p>
+<br>
 ssid: 
 <?php
   echo $ssids;
 ?>  
-<p>
+<br>
 Creation Time: 
 <?php
   echo $createTime;
 ?>    
-<p>
+<br>
 Expiration: 
 <?php
   echo $expireTime;
@@ -94,6 +99,15 @@ Expiration:
 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>">
 <input id="buttons" type="submit" name="submit" value="Email">
+</form>
+</div>
+
+<div class="buttons">
+<form action="sms.php" method="post" onsubmit="return confirm('Are you sure you want to send an SMS containing the credentials for <?php echo htmlspecialchars($userName); ?> to <?php echo htmlspecialchars($phone); ?>?');">
+<input type="hidden" name="userName" value="<?php echo htmlspecialchars($userName); ?>">
+<input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
+<input type="hidden" name="phone" value="<?php echo htmlspecialchars($phone); ?>">
+<input id="buttons" type="submit" name="submit" value="SMS">
 </form>
 </div>
 

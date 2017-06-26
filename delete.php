@@ -24,7 +24,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "DELETE",
   CURLOPT_HTTPHEADER => array(
-    "authorization: Bearer $guesttoken",
+    "authorization: Bearer $accesstoken",
     "cache-control: no-cache",
     "x-ah-api-client-id: $clientid",
     "x-ah-api-client-redirect-uri: $redirecturi",

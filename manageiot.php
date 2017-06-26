@@ -23,7 +23,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
-    "authorization: Bearer $guesttoken",
+    "authorization: Bearer $accesstoken",
     "cache-control: no-cache",
     "x-ah-api-client-id: $clientid",
     "x-ah-api-client-redirect-uri: $redirecturi",
@@ -54,27 +54,27 @@ username:
 <?php
   echo $userName;
 ?>
-<p>
-phone: 
+<br>
+mobile: 
 <?php
   echo $phone;
 ?>
-<p>
+<br>
 email: 
 <?php
   echo $email;
 ?>
-<p>
+<br>
 ssid: 
 <?php
   echo $ssids;
 ?>  
-<p>
+<br>
 Creation Time: 
 <?php
   echo $createTime;
 ?>    
-<p>
+<br>
 Expiration: 
 <?php
   echo $expireTime;

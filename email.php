@@ -27,7 +27,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => "{\r\n  \"credentialId\": $id,\r\n  \"deliverMethod\": \"EMAIL\",\r\n  \"email\": \"$email\"\r\n}",
   CURLOPT_HTTPHEADER => array(
-    "authorization: Bearer $guesttoken",
+    "authorization: Bearer $accesstoken",
     "cache-control: no-cache",
     "content-type: application/json",
     "x-ah-api-client-id: $clientid",
